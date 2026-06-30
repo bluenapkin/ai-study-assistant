@@ -7,6 +7,8 @@ app.use(cors());
 app.use(express.json());
 
 require('./db');
+const authRoutes = require('./routes/auth');
+app.use('/api/auth', authRoutes);
 
 app.get('/', (req, res) => {
   res.send('Server is running!');
